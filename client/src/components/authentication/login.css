@@ -1,0 +1,50 @@
+.Login{
+    /* width: 70vw; */
+    width: fit-content;
+    padding: 1rem 4rem;
+    margin: 1rem auto ;
+    background-color: grey;
+}
+
+.Login h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+}
+
+.loginform{
+    padding:15px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loginform input{
+    width: 16rem;
+    height: 2.5rem;
+    /* text-align: center; */
+}
+.loginbtn{
+    padding: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+    background-color: #0ECEEF;
+    border-radius: 10px;
+}
+
+.pic{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #FFFFFF;
+    gap:2rem;
+}
+
+.registerbtn{
+    padding: 0.5rem 0.5rem;
+    background-color:#38E53B;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}

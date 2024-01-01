@@ -1,0 +1,15 @@
+.messages{
+    display: flex;
+    /* background-color: "black"; */
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.typing{
+    padding: 0.8rem;
+    background-color: burlywood;
+    border-radius: 5%;
+    display: inline-block;
+
+}
