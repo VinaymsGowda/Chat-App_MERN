@@ -147,7 +147,7 @@ function Signup() {
       </Button>
     </form>
 
-    <img src={image} alt='posted'/>
+    
     </div>
   )
 }

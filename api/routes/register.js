@@ -11,9 +11,9 @@ regRoute.post('/',async(req,res)=>{
     console.log(username);
     console.log(password);
 
-    // if(!profile){
-    //     profile="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-    // }
+    if(!profile){
+        profile="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+    }
     
     if(!username || !email || !password){
         res.status(400);

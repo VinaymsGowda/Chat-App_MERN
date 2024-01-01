@@ -16,7 +16,7 @@ const toast=useToast();
   useEffect(()=>{
     setLoggedUser(JSON.parse(localStorage.getItem('userinfo')))
     fetchChats();
-  },[fetchAgain])
+  },[fetchAgain,selectedChat])
 
   const fetchChats=async()=>{
     try {
