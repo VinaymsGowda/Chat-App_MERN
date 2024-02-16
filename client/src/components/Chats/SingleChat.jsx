@@ -13,7 +13,7 @@ import io from "socket.io-client"
 import Lottie from "lottie-react";
 import animationData from "../../Animations/typing.json";
 
-const ENDPOINT="http://localhost:4000"
+const ENDPOINT="http://https://server-side-chat.onrender.com"
 
 var socket,selectedChatCompare;
 
@@ -74,7 +74,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
         }
       }
       setNewMessage("");
-      const {data}=await axios.post("http://localhost:4000/message/",{
+      const {data}=await axios.post("http://https://server-side-chat.onrender.com/message/",{
           "content":newmessage,
           "chatid":selectedChat._id,
       },config);
@@ -111,7 +111,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
       }
     }
     setLoading(true);
-    const {data}=await axios.get(`http://localhost:4000/message/${selectedChat._id}`,config)
+    const {data}=await axios.get(`http://https://server-side-chat.onrender.com/message/${selectedChat._id}`,config)
     
     setMessages(data);
     setLoading(false);

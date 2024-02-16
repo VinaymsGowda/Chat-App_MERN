@@ -19,7 +19,7 @@ function Signup() {
   //sending to db
   async function createUser(){
     try {
-      const response=await fetch('http://localhost:4000/register',{
+      const response=await fetch('http://https://server-side-chat.onrender.com/register',{
         method:"POST",
         body: JSON.stringify({ data, profile: image || "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" }),
         headers: {

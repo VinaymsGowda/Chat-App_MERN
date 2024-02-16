@@ -19,7 +19,7 @@ export default function Login() {
   async function handelSubmit(e){
     e.preventDefault();
     try {
-      const response=await fetch("http://localhost:4000/login",{
+      const response=await fetch("http://https://server-side-chat.onrender.com/login",{
         method:"POST",
         body:JSON.stringify({data}),
         headers:{

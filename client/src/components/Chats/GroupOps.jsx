@@ -60,7 +60,7 @@ console.log("Selected Chat",selectedChat);
                 },
             };
 
-            const {data}=await axios.get(`http://localhost:4000/user/allusers?search=${search}`,config)
+            const {data}=await axios.get(`http://https://server-side-chat.onrender.com/user/allusers?search=${search}`,config)
             setSearchData(data)
             console.log(data);
         }
