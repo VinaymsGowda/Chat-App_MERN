@@ -28,7 +28,7 @@ const MONGOURI=process.env.MONGOURI;
 app.use(bodyParser.json({ limit: '10mb' }));
 // app.use(express.json())
 const corsOptions = {
-    origin: 'https://chatapplication-mern.netlify.app/', // Update this with your frontend's origin
+    origin: 'https://chatapplication-mern.netlify.app', // Update this with your frontend's origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   };
