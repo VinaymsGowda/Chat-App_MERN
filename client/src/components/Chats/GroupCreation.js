@@ -61,7 +61,7 @@ function GroupCreation({children,handleFunc}) {
                 },
             };
 
-            const {data}=await axios.get(`http://https://server-side-chat.onrender.com/user/allusers?search=${search}`,config)
+            const {data}=await axios.get(`https://server-side-chat.onrender.com/user/allusers?search=${search}`,config)
             setSearchData(data)
             setLoading(false)
             console.log(data);
@@ -106,7 +106,7 @@ function GroupCreation({children,handleFunc}) {
                 },
             };
 
-            const {data}=await axios.post('http://https://server-side-chat.onrender.com/chat/group/create',
+            const {data}=await axios.post('https://server-side-chat.onrender.com/chat/group/create',
             {
                 name:groupName,
                 users:JSON.stringify(selectedUsers.map(u=>u._id))

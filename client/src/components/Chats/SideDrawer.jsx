@@ -47,7 +47,7 @@ function SideDrawer() {
     }
     try {
       setLoading(true)
-      const {data}=await axios.get(`http://https://server-side-chat.onrender.com/user/allusers?search=${search}`,{
+      const {data}=await axios.get(`https://server-side-chat.onrender.com/user/allusers?search=${search}`,{
       headers:{
         Authorization:`Bearer ${user.token}`
       }
@@ -78,7 +78,7 @@ function SideDrawer() {
       setLoadingChat(true);
       
       const { data } = await axios.post(
-        "http://https://server-side-chat.onrender.com/chat/create",
+        "https://server-side-chat.onrender.com/chat/create",
         { userid: user_id },
         {
             headers: {

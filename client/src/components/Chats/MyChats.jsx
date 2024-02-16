@@ -20,7 +20,7 @@ const toast=useToast();
 
   const fetchChats=async()=>{
     try {
-        const {data}=await axios.get("http://https://server-side-chat.onrender.com/chat/allchats",{
+        const {data}=await axios.get("https://server-side-chat.onrender.com/chat/allchats",{
         headers:{
           Authorization:`Bearer ${user.token}`
         },

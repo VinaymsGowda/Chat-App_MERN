@@ -37,7 +37,7 @@ function UpdateGroupChat({children,fetchAgain,setFetchAgain,fetchMessages}) {
         return;
 
         try {
-        const {data}=await axios.put("http://https://server-side-chat.onrender.com/chat/group/rename",
+        const {data}=await axios.put("https://server-side-chat.onrender.com/chat/group/rename",
         {
             chatid:selectedChat._id,
             newchatname:groupChatName,
@@ -72,7 +72,7 @@ function UpdateGroupChat({children,fetchAgain,setFetchAgain,fetchMessages}) {
               },
           };
 
-          const {data}=await axios.get(`http://https://server-side-chat.onrender.com/user/allusers?search=${search}`,config)
+          const {data}=await axios.get(`https://server-side-chat.onrender.com/user/allusers?search=${search}`,config)
           setSearchData(data)
           setLoading(false)
           console.log(data);
@@ -124,7 +124,7 @@ async function handleAddUser(userToadd) {
       },
     };
     const response = await axios.put(
-      "http://https://server-side-chat.onrender.com/chat/group/add",
+      "https://server-side-chat.onrender.com/chat/group/add",
       {
         chatid: selectedChat._id,
         userid: userToadd._id,
@@ -175,7 +175,7 @@ async function handleRemove(u){
   };
     const isLeavingGroup = u._id === user._id;
 
-    const { data } = await axios.put("http://https://server-side-chat.onrender.com/chat/group/remove", {
+    const { data } = await axios.put("https://server-side-chat.onrender.com/chat/group/remove", {
       chatid: selectedChat._id,
       userid: u._id,
     }, config);
