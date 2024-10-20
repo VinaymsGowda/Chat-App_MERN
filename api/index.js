@@ -8,14 +8,22 @@ import regRoute from "./routes/register.js";
 import { UserRouter } from "./routes/User.js";
 import chatRouter from "./routes/chats.js";
 import messageRouter from "./routes/messageRouter.js";
-import { createServer } from "node:http";
+import { createServer as httpServer } from "node:http";
+import { createServer as httpsServer } from "node:https";
 import { Server } from "socket.io";
 import { log } from "node:console";
 
 dotenv.config();
 
 const app = express();
-const server = createServer(app);
+let server;
+if (process.env.ENVIRONMENT == "DEV") {
+  server = httpServer(app);
+} else {
+  server = httpsServer(app);
+}
+// const server = createServer(app);
+
 const corsOptions = {
   origin: process.env.FRONTEND_URL,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
