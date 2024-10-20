@@ -16,22 +16,20 @@ dotenv.config();
 
 const app = express();
 const server = createServer(app);
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+};
 const io = new Server(server, {
   pingTimeout: 60000,
-  cors: {
-    origin: process.env.FRONTEND_URL,
-  },
+  cors: corsOptions,
 });
 
 const port = process.env.PORT || 4000;
 const MONGOURI = process.env.MONGOURI;
 app.use(bodyParser.json({ limit: "10mb" }));
 // app.use(express.json())
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-};
 
 app.use(cors(corsOptions));
 

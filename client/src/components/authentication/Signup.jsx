@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
-import { Button } from "@chakra-ui/button";
-import { useToast } from "@chakra-ui/toast";
+import { Button } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 function Signup() {

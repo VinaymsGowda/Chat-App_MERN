@@ -92,7 +92,7 @@ function MyChats({ fetchAgain }) {
               chats.map((chat) => (
                 <Box
                   backgroundColor={
-                    selectedChat._id == chat._id ? "#16FAFA" : "#E8E8E8"
+                    selectedChat?._id == chat._id ? "#16FAFA" : "#E8E8E8"
                   }
                   key={chat._id}
                   onClick={() => setSelectedChat(chat)}

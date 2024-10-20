@@ -21,22 +21,16 @@ function ScrollableChat({ messages }) {
           <div style={{ display: "flex", marginBottom: "10px" }} key={m._id}>
             {(isSameSender(messages, m, i, user._id) ||
               isLastMessage(messages, i, user._id)) && (
-              <Tooltip
-                label={m.sender.username}
-                placement="bottom-start"
-                hasArrow
-              >
-                <Profile user={m.sender}>
-                  <Avatar
-                    marginTop="7px"
-                    marginRight="1"
-                    size={"sm"}
-                    cursor={"pointer"}
-                    name={m.sender.username}
-                    src={m.sender.profile}
-                  />
-                </Profile>
-              </Tooltip>
+              <Profile user={m.sender}>
+                <Avatar
+                  marginTop="7px"
+                  marginRight="1"
+                  size={"sm"}
+                  cursor={"pointer"}
+                  name={m.sender.username}
+                  src={m.sender.profile}
+                />
+              </Profile>
             )}
             <span
               style={{
@@ -52,9 +46,11 @@ function ScrollableChat({ messages }) {
                 flexDirection: "column",
               }}
             >
-              <Text fontWeight="bold" fontSize="sm" color="gray.600">
-                {m.sender.username}
-              </Text>
+              {m.sender?._id != user?._id && (
+                <Text fontWeight="bold" fontSize="sm" color="gray.600">
+                  {m.sender.username}
+                </Text>
+              )}
               <Text>{m.content}</Text>
             </span>
           </div>
