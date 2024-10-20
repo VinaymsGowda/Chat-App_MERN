@@ -80,6 +80,10 @@ io.on("connection", (socket) => {
       socket.in(user._id).emit("message recieved", newMessageReceived);
     });
   });
+
+  socket.off("setup", () => {
+    socket.leave(userData?._id);
+  });
 });
 
 mongoose

@@ -39,6 +39,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
   useEffect(() => {
     socket = io(ENDPOINT, {
       transports: ["websocket", "polling"],
+      withCredentials: true,
     });
     socket.emit("setup", user);
     socket.on("connected", () => {
@@ -47,6 +48,9 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
 
     socket.on("typing", () => setIsTyping(true));
     socket.on("stop typing", () => setIsTyping(false));
+    socket.on("disconnect", () => {
+      console.log("A client disconnected");
+    });
   }, []);
 
   useEffect(() => {
