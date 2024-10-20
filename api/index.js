@@ -23,7 +23,13 @@ const corsOptions = {
 };
 const io = new Server(server, {
   pingTimeout: 60000,
-  cors: corsOptions,
+  cors: {
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST"],
+    credentials: true,
+    transports: ["websocket", "polling"],
+  },
+  allowEIO3: true,
 });
 
 const port = process.env.PORT || 4000;
