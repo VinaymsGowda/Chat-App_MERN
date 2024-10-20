@@ -20,7 +20,7 @@ let server;
 if (process.env.ENVIRONMENT == "DEV") {
   server = httpServer(app);
 } else {
-  server = httpsServer(app);
+  server = httpsServer({}, app);
 }
 // const server = createServer(app);
 
