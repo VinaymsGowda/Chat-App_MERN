@@ -37,7 +37,9 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
   const toast = useToast();
 
   useEffect(() => {
-    socket = io(ENDPOINT);
+    socket = io(ENDPOINT, {
+      transports: ["websocket", "polling"],
+    });
     socket.emit("setup", user);
     socket.on("connected", () => {
       setSocketConnected(true);
